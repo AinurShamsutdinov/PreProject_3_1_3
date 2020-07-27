@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<link type="text/css" rel="stylesheet" id="dark-mode-general-link">
+<link type="text/css" rel="stylesheet" id="light-mode-custom-link">
+<style type="text/css" id="dark-mode-custom-style"></style>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>User page</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link href="https://getbootstrap.com/docs/4.0/examples/signin/signin.css" rel="stylesheet" crossorigin="anonymous">
+    <style>
+        body{
+            padding-top: 100px;
+            background-color: #FFFFFF;
+        }
+    </style>
+
+</head>
+
+<body>
+<nav class="navbar navbar-dark bg-dark fixed-top">
+    <div class="navbar-nav mt-2 mt-lg-0">
+        <div class="nav-item text-white">
+            <span th:text="${userData.email}" class="font-weight-bold"> Email </span> with roles: <span th:text="${userData.rolesToString()}"> Roles </span>
+        </div>
+    </div>
+    <div class="navbar-nav mt-2 mt-lg-0">
+        <div class="nav-item">
+            <a href="/logout" class=" nav-link">Logout <span class="sr-only">(current)</span></a>
+        </div>
+    </div>
+</nav>
+<div class="container mx-0">
+    <div class="row">
+        <div class="col-3">
+            <div class="btn-group-vertical btn-lg btn-block">
+                <button type="button" class="btn btn-primary btn-lg btn-block">User</button>
+            </div>
+        </div>
+        <div class="col-9">
+            <h1>User information-page</h1>
+
+            <div>
+                <table class="table table-hover">
+                    <h2>About user</h2>
+                    <thead>
+                    <tr>
+                        <th> ID </th>
+                        <th> Name </th>
+                        <th> Last name </th>
+                        <th> Age </th>
+                        <th> Email </th>
+                        <th> Role </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td><span th:text="${userData.id}"> ID </span></td>
+                        <td><span th:text="${userData.userName}"> First Name </span></td>
+                        <td><span th:text="${userData.lastName}"> Last Name </span></td>
+                        <td><span th:text="${userData.age}"> Age </span></td>
+                        <td><span th:text="${userData.email}"> Email </span></td>
+                        <td><span th:text="${userData.rolesToString()}"> Roles </span></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Optional JavaScript -->
+
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
