@@ -9,7 +9,7 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
-@Data
+//@Data
 @Entity
 @Table(name = "users")
 public class User implements UserDetails {
@@ -51,7 +51,6 @@ public class User implements UserDetails {
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id")
     )
-    //@ManyToMany(fetch = FetchType.EAGER)
     private Set<Role> roles = new HashSet<>();
 
     public User(){
@@ -59,6 +58,16 @@ public class User implements UserDetails {
     }
 
     public User(String userName, String lastName,int age, String email, String password, Set<Role> roles){
+        this.userName = userName;
+        this.lastName = lastName;
+        this.age = age;
+        this.email = email;
+        this.password = password;
+        this.roles = roles;
+    }
+
+    public User(long id, String userName, String lastName,int age, String email, String password, Set<Role> roles){
+        this.id = id;
         this.userName = userName;
         this.lastName = lastName;
         this.age = age;

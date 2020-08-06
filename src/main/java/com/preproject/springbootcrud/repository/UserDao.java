@@ -14,7 +14,8 @@ public interface UserDao extends JpaRepository<User, Long> {
     List<User> findByLastName(String lastName);
     User findByUserName(String userName);
     User findByEmail(String email);
-    Optional<User> findById(long id);
+    //Optional<User> findById(long id);
+    User findById(long id);
 
     @Modifying
     @Query("update User u set u = ?2 where u.id = ?1")

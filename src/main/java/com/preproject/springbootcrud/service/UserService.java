@@ -26,8 +26,8 @@ public class UserService implements UserDetailsService{
         this.roleDao = roleDao;
     }
 
-    public User findById(Long id){
-        return userDao.getOne(id);
+    public User findById(long id){
+        return userDao.findById(id);
     }
 
     public List<User> findAllUsers(){
@@ -67,7 +67,7 @@ public class UserService implements UserDetailsService{
         return userDetails;
     }
 
-    public Optional<User> getUserById(long id){
+    public User getUserById(long id){
         return userDao.findById(id);
     }
 
